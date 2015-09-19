@@ -1,0 +1,19 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+############ SpaceDrop Core ############
+
+spacedrop:core
+
+############ SpaceDrop Packages (Optional) ############
+
+spacedrop:user
+spacedrop:permissions
+spacedrop:menu
+spacedrop:system
+spacedrop:entity
+spacedrop:node
+spacedrop:metatags
