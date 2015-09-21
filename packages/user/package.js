@@ -13,9 +13,28 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2-rc.12');
 
-  api.use(['spacedrop:core@0.0.1']);
+  var packages = [
+    'accounts-base',
+    'accounts-password',
+    'accounts-ui',
+    'templating'
+  ];
 
-  api.addFiles('user.js');
+  api.use(packages);
+
+  api.imply(packages);
+
+  api.use([
+    'spacedrop:core',
+    'spacedrop:menu'
+  ]);
+
+  api.addFiles('user.jsx');
+  api.addFiles('routes.jsx');
+
+  api.addFiles('accounts-config.js', 'client');
+
+  api.addFiles('server/publications/user.js', 'server');
 });
 
 Package.onTest(function(api) {

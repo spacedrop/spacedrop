@@ -21,7 +21,8 @@ Package.onUse(function(api) {
     'tracker',
     'standard-minifiers',
     'es5-shim',
-    'ecmascript'
+    'ecmascript',
+    'react'
   ];
 
   api.use(packages);
@@ -29,6 +30,10 @@ Package.onUse(function(api) {
   api.imply(packages);
 
   api.addFiles('core.js');
+  api.addFiles('blaze-in-react.js');
+
+  api.export('BlazeInReact');
+  api.export('SpaceDrop');
 });
 
 Package.onTest(function(api) {

@@ -16,12 +16,12 @@ Package.onUse(function(api) {
   api.use(['spacedrop:core@0.0.1']);
 
   var packages = [
-    'react',
-
     'meteorhacks:fast-render@2.10.0',
     'meteorhacks:subs-manager',
     'kadira:flow-router-ssr@3.2.1',
-    'kadira:react-layout@1.3.0'
+    'kadira:react-layout@1.3.0',
+
+    'reactive-dict'
   ];
 
   api.use(packages);
@@ -35,7 +35,6 @@ Package.onUse(function(api) {
   api.addFiles('scroll-tracking.js', 'client');
 
   api.export('Menu');
-  api.export('Body');
 });
 
 Package.onTest(function(api) {

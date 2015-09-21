@@ -19,6 +19,7 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles('system.jsx');
+  api.addFiles('routes.jsx');
 
   api.export('System');
 });
