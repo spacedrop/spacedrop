@@ -7,19 +7,24 @@ Menu = class Menu {
       subscriptions: function() {
         _.each(route.subscriptions, (options, subscription) => {
           if (typeof subscription == 'string') {
-            this.register(subscription, Meteor.subscribe(subscription, _.map(options, (option) => {
+            this.register(subscription, Meteor.subscribe.apply(this, _.union([subscription], _.map(options, (option) => {
               if (typeof option == 'function') {
                 return option();
               }
+              if (typeof option == 'string') {
+                var route = FlowRouter.current();
+                return route.params[option];
+              }
               return option;
-            })));
+            }))));
           }
         });
       },
       action: function() {
+        var current = FlowRouter.current();
         var arguments = {
-          params: this._params,
-          query: this._queryParams
+          params: current.params,
+          query: current.queryParams
         };
 
         if (Meteor.isClient) {

@@ -2,7 +2,6 @@ SpaceDrop = {
   Component: class Component extends React.Component {
     constructor(props) {
       super(props);
-      console.log('yo');
       this.comp = {};
       this.subs = {};
     }

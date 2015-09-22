@@ -11,13 +11,15 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2-rc.12');
+  api.versionsFrom('1.2');
 
   var packages = [
     'accounts-base',
     'accounts-password',
     'accounts-ui',
-    'templating'
+    'templating',
+
+    'matb33:collection-hooks'
   ];
 
   api.use(packages);
@@ -29,12 +31,14 @@ Package.onUse(function(api) {
     'spacedrop:menu'
   ]);
 
-  api.addFiles('user.jsx');
+  api.addFiles('components/home.jsx');
+  api.addFiles('components/user.jsx');
   api.addFiles('routes.jsx');
 
   api.addFiles('accounts-config.js', 'client');
 
   api.addFiles('server/publications/user.js', 'server');
+  api.addFiles('server/observers/user.js', 'server');
 });
 
 Package.onTest(function(api) {

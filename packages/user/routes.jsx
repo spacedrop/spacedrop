@@ -1,17 +1,12 @@
 Menu.route({
   path: '/user',
-  page_component: UserHome
+  page_component: Home
 });
 
 Menu.route({
-  path: '/users',
-  page_component: UserHome
-});
-
-Menu.route({
-  path: '/users/:username',
-  page_component: UserUser,
+  path: '/user/:uid',
+  page_component: User,
   subscriptions: {
-    'user.user': []
+    'user.user': ['uid']
   }
 });
