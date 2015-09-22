@@ -40,6 +40,8 @@ Package.onUse(function(api) {
 
   api.addFiles('server/publications/user.js', 'server');
   api.addFiles('server/observers/user.js', 'server');
+
+  api.export('User');
 });
 
 Package.onTest(function(api) {

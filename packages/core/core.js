@@ -15,3 +15,6 @@ SpaceDrop = {
     }
   }
 }
+
+ReactTemplate = {};
+ReactTemplate.User = {a: 1};

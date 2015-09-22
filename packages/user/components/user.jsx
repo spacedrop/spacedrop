@@ -28,9 +28,10 @@ User.User = class User extends SpaceDrop.Component {
     });
   }
   render() {
+    console.log(ReactTemplate.User);
     return (<div>
-      {this.state.user ? (
-        <div>{this.state.user.uid}</div>
+      {this.state && this.state.user ? (
+        <div>{this.state && this.state.user.uid}</div>
       ):(
         <div>Not found</div>
       )}
