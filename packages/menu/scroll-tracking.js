@@ -32,7 +32,7 @@ window.onpopstate = function(e) {
     delete ScrollTop.keys[route.path];
     setTimeout(function() {
       window.scrollTo(0, scrolltop);
-      $('#react-root').animate({opacity: 1}, 150);
+      $('#react-root').delay(150).animate({opacity: 1}, 150);
     }, 0);
   }, 0);
 }

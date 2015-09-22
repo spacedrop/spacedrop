@@ -1,4 +1,4 @@
-Home = class Home extends SpaceDrop.Component {
+User.Home = class Home extends SpaceDrop.Component {
   constructor(props) {
     super(props);
     this.state = {

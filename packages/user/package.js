@@ -31,6 +31,7 @@ Package.onUse(function(api) {
     'spacedrop:menu'
   ]);
 
+  api.addFiles('user.js');
   api.addFiles('components/home.jsx');
   api.addFiles('components/user.jsx');
   api.addFiles('routes.jsx');

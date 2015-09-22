@@ -18,7 +18,9 @@ Package.onUse(function(api) {
     'spacedrop:menu'
   ]);
 
-  api.addFiles('system.jsx');
+  api.addFiles('system.js');
+  api.addFiles('components/front.jsx');
+  api.addFiles('components/settings.jsx');
   api.addFiles('routes.jsx');
 
   api.export('System');
