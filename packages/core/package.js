@@ -34,7 +34,6 @@ Package.onUse(function(api) {
 
   api.export('BlazeInReact');
   api.export('SpaceDrop');
-  api.export('ReactTemplate');
 });
 
 Package.onTest(function(api) {

@@ -13,34 +13,46 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
+  // External dependencies.
   var packages = [
     'accounts-base',
     'accounts-password',
     'accounts-ui',
     'templating',
 
-    'matb33:collection-hooks'
+    'matb33:collection-hooks',
+    'timbrandin:react-templates'
   ];
 
   api.use(packages);
-
   api.imply(packages);
 
+  // Internal dependencies.
   api.use([
     'spacedrop:core',
     'spacedrop:menu'
   ]);
 
+  // Templates.
+  api.addFiles('templates/user.html.jsx');
+  api.addFiles('templates/home.html.jsx');
+
+  // Components
   api.addFiles('user.js');
   api.addFiles('components/home.jsx');
   api.addFiles('components/user.jsx');
   api.addFiles('routes.jsx');
 
+  // Configuration
   api.addFiles('accounts-config.js', 'client');
 
+  // Publications.
   api.addFiles('server/publications/user.js', 'server');
+
+  // Observers.
   api.addFiles('server/observers/user.js', 'server');
 
+  // Exports.
   api.export('User');
 });
 

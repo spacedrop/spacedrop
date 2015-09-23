@@ -28,13 +28,6 @@ User.User = class User extends SpaceDrop.Component {
     });
   }
   render() {
-    console.log(ReactTemplate.User);
-    return (<div>
-      {this.state && this.state.user ? (
-        <div>{this.state && this.state.user.uid}</div>
-      ):(
-        <div>Not found</div>
-      )}
-      </div>);
+    return ReactTemplate.User(this.state);
   }
 };
