@@ -21,16 +21,16 @@ class ReactTemplate {
     return markup;
   }
   parse(source) {
-    var jsx = "";
+    let jsx = "";
     // Find and start parsing and compiling each templates.
-    var parts = source.split(/<template name="(\w+)">/i);
-    var extras = parts[0];
-    for(var i=1; i <= parts.length-1; i+=2) {
-      var className = parts[i];
+    const parts = source.split(/<template name="(\w+)">/i);
+    const extras = parts[0];
+    for(let i=1; i <= parts.length-1; i+=2) {
+      const className = parts[i];
 
       // Split out the trailing end after the template.
-      var code = parts[i+1].split(/<\/template>/i);
-      var markup = ReactTemplate.compile(className, code[0] || '');
+      const code = parts[i+1].split(/<\/template>/i);
+      const markup = ReactTemplate.compile(className, code[0] || '');
 
       jsx += `ReactTemplate.${className} = (context) => { return (${markup}) };\n`;
     }
@@ -58,8 +58,8 @@ ReactTemplateCompiler = class ReactTemplateCompiler {
         bare: !! fileOptions.bare
       };
 
-      var jsx = new ReactTemplate(source);
-      var result = ReactTemplateCompiler.transpileJSX(jsx, inputFile);
+      const jsx = new ReactTemplate(source);
+      const result = ReactTemplateCompiler.transpileJSX(jsx, inputFile);
       toBeAdded.data = result.code;
       toBeAdded.hash = result.hash;
       toBeAdded.sourceMap = result.map;
@@ -70,6 +70,7 @@ ReactTemplateCompiler = class ReactTemplateCompiler {
   static transpileJSX(jsx, inputFile) {
     // Capture jsx failures in compiling.
     try {
+      // This uses hoisting at function level
       var result = Babel.transformMeteor("" + jsx, {
         sourceMap: true,
         filename: inputFile.getPathInPackage(),
@@ -90,10 +91,8 @@ ReactTemplateCompiler = class ReactTemplateCompiler {
         console.log(inputFile.getPathInPackage());
         console.log('=====================');
         console.log(inputFile.getContentsAsString());
-        var lines = ("" + jsx).split(/\n/g);
-        _.each(lines, function(line, i) {
-          console.log((i+1) + '  ', line);
-        });
+        const lines = ("" + jsx).split(/\n/g);
+        _.each(lines, (line, i) => console.log((i+1) + '  ', line));
 
         return;
       } else {
@@ -107,6 +106,5 @@ ReactTemplateCompiler = class ReactTemplateCompiler {
 
 Plugin.registerCompiler({
   extensions: ['html.jsx']
-}, function () {
-  return new ReactTemplateCompiler();
-});
+}, () => new ReactTemplateCompiler()
+);

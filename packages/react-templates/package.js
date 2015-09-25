@@ -35,10 +35,13 @@ Npm.depends({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.0.1');
-  api.use('isobuild:compiler-plugin@1.0.0');
+  api.use([
+    'ecmascript',
+    'isobuild:compiler-plugin@1.0.0'
+  ]);
   api.imply('babel-runtime@0.1.4');
 
-  api.use(['cosmos:browserify@0.4.0'], 'client');
+  api.use(['cosmos:browserify@0.7.0'], 'client');
 
   api.addFiles([
     'classnames-server.js',

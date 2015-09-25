@@ -18,8 +18,8 @@ Package.onUse(function(api) {
   var packages = [
     'meteorhacks:fast-render@2.10.0',
     'meteorhacks:subs-manager',
-    'kadira:flow-router-ssr@3.2.1',
-    'kadira:react-layout@1.3.0',
+    'kadira:flow-router-ssr@3.3.0',
+    'kadira:react-layout@1.3.1',
 
     'reactive-dict'
   ];

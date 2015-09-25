@@ -11,7 +11,7 @@ ReactEvents = {
   'dblclick': 'onDoubleClick',
   'drag': 'onDrag',
   'dragend': 'onDragEnd',
-  'dragenter' : 'onDragEnter',
+  'dragenter': 'onDragEnter',
   'dragexit': 'onDragExit',
   'dragleave': 'onDragLeave',
   'dragover': 'onDragOver',
