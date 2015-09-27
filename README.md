@@ -34,11 +34,11 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
   * [ ] Reports package and page showing status of current installed version and more.
   * [ ] Admin menu for all administrative tasks.
 * Configuration management
-  * Structure package (or call it Schema package)
+  * Structure
     * [ ] Creating collections
     * [ ] Manage schemas for collections
     * [ ] Manage indexes for a collection
-  * Structure UI (or call it Schema package)
+  * Structure UI
     * [ ] UI for adding/removing collections
     * [ ] UI for adding/removing fields on a collections
   * Structure from UI to code
