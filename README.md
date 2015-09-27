@@ -11,6 +11,7 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
 * Core
   * Menu
     * Simplify the API to create and manage routes and access management for other packages.
+    * UI for management of menus.
   * User
     * UI for management of users.
   * Permission
