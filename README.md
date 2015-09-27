@@ -60,6 +60,7 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
 * Documentation
   * [ ] JSDoc on all packages/components/classes generated to a docs site.
   * [ ] Manuals for all API's such as Menu, Permission, Structure, etc.
+  * [ ] Documentation how to create a new app using a distribution (Distributions are ready sets of SpaceDrop packages one can get started using direcly).
 * Security
   * [ ] Argument checks
   * [ ] Browser policy
