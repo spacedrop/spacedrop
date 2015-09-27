@@ -84,6 +84,7 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
   * [ ] A/B testing (rendering depending on population, reports on funnels, ...)
   * [ ] Sharers for social networks
   * [ ] UTM campaigns
+  * [ ] Ads / Banners
   * [ ] Rocket.Chat integration with bots for outside hours
   * [ ] Maps integration with styling
 * System health support
