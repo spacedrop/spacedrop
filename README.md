@@ -94,3 +94,7 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
   * [ ] Docker based infrastructure for monolithic applications
   * [ ] Docker based infrastructure for clustered applications
   * [ ] Cordova project for iOS, Android and Android legacy (with Crosswalk integration)
+* Internationalization
+  * [ ] Simple translation support for packages.
+  * [ ] UI for translating strings
+  * [ ] UI to update translations from external sources, i.e. https://localize.drupal.org/
