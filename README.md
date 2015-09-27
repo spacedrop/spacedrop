@@ -18,7 +18,7 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
     * UI for roles and user permissions.
 * Theming
   * React Templates (Blaze inspired templating)
-  * Sideburns (Blaze inspired)
+  * Sideburns (Blaze inspired events/helpers/callbacks)
   * Overriding templates
   * Basic theme (package)
 * Admin UI
