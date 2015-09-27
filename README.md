@@ -27,7 +27,7 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
   * [ ] Overriding templates
   * [ ] Basic theme (package)
 * Admin UI
-  * [ ] Administring site settings
+  * [ ] Administrating site settings
   * [ ] Editing documents, forms generated from schemas in the Structure package.
   * [ ] Add/remove and publish/unpublish documents.
   * [ ] Packages overview (on/off capabilities)
@@ -64,29 +64,34 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
   * [ ] Argument checks
   * [ ] Browser policy
   * [ ] Rate limiting for preventing flooding
-* Asset managagement system
+* Asset management system
   * [ ] Media library for static files
   * [ ] Images (PNG, JPEG, WebP) with server side optimization (resolutions, metadata removal, conversions) and client side edition.
   * [ ] SVG with client side edition
   * [ ] MPEG-4 with server side entropy recompression and optimization (resolutions, conversions).
+  * [ ] External asset importer for Youtube
 * Features as packages
   * [ ] Browser outdated warning
   * [ ] Cookie information
   * [ ] Legal information
+  * [ ] Favicons with manifests and screen launching for mobiles
+  * [ ] Search engine (full text search as default, external river for Elasticsearch)
+  * [ ] Basic recommender engine
   * [ ] Analytics (GA, Mixpanel, ...).
   * [ ] Transactional emails (SMTP, Mailjet, Mandrill, ...) with client side edition (tagging, theming)
-  * [ ] PDF generation for catalogues, licence agreement, ...
+  * [ ] PDF generation for catalogues, license agreement, ...
   * [ ] Payment capabilities (Braintree, Stripe, ...)
   * [ ] A/B testing (rendering depending on population, reports on funnels, ...)
   * [ ] Sharers for social networks
-  * [ ] UTM compaigns
+  * [ ] UTM campaigns
   * [ ] Ads / Banners
   * [ ] Rocket.Chat integration with bots for outside hours
+  * [ ] Maps integration with styling
 * System health support
   * [ ] Client information on connection status
   * [ ] Server status
   * [ ] Simple analytic dashboard (CPU consumption, RAM, Drive)
 * Devops - Assistance and helpers for deployment
-  * [ ] Docker based infrastructure for monolythic applications
+  * [ ] Docker based infrastructure for monolithic applications
   * [ ] Docker based infrastructure for clustered applications
-  * [ ] Cordova project for iOS, Android and Android legacy (with Crosswolk integration)
+  * [ ] Cordova project for iOS, Android and Android legacy (with Crosswalk integration)
