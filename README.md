@@ -9,9 +9,9 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
 ## Sub-projects
 
 * Core
-  * [ ] Logging system (inner logging, logs transmitted to external system)
+  * [x] Logging system (inner logging, logs transmitted to external system)
   * Caching management and injection
-    * [ ] Subscription caching
+    * [x] Subscription caching
     * [ ] Appcache
   * Menu
     * [ ] Simplify the API to create and manage routes and access management for other packages.
