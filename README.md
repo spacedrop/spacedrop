@@ -51,4 +51,4 @@ Become a co-author and member of the board steering SpaceDrop's directions in th
   * REST api for read/write to documents in a collection.
 * Documentation
   * JSDoc on all packages/components/classes generated to a docs site.
-  * Manuals for all API's such as Menu, Permission, Schema, etc.
+  * Manuals for all API's such as Menu, Permission, Structure, etc.
