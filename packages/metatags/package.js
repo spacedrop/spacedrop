@@ -18,7 +18,7 @@ Package.onUse(function(api) {
   var packages = [
     'gadicohen:sitemaps',
     'gadicohen:robots-txt',
-    'kadira:dochead',
+    'kadira:dochead@1.2.2',
     'reactive-dict'
   ];
 
