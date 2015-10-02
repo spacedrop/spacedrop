@@ -21,7 +21,7 @@ Package.onUse(function(api) {
     'templating',
 
     'matb33:collection-hooks',
-    'timbrandin-react-templates'
+    'timbrandin:react-templates'
   ];
 
   api.use(packages);
