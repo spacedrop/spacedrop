@@ -41,7 +41,7 @@ Package.onUse(function(api) {
   ]);
   api.imply('babel-runtime@0.1.4');
 
-  api.use(['cosmos:browserify@0.7.0'], 'client');
+  api.use(['cosmos:browserify@0.7.4'], 'client');
 
   api.addFiles([
     'classnames-server.js',
