@@ -31,20 +31,20 @@ SD.Menu = class Menu {
           if (route.subscriptions && route.subscriptions.length > 0) {
             route.subscriptions.map((subscription) => {
               FlowRouter.subsReady(subscription, () => {
-                ReactLayout.render(Body, {
+                ReactLayout.render(SD.Views.Client.Page, {
                   content: React.createElement(route.page_component, arguments)
                 });
               });
             });
           }
           else {
-            ReactLayout.render(Body, {
+            ReactLayout.render(SD.Views.Client.Page, {
               content: React.createElement(route.page_component, arguments)
             });
           }
         }
         else {
-          ReactLayout.render(Body, {
+          ReactLayout.render(SD.Views.Client.Page, {
             content: React.createElement(route.page_component, arguments)
           });
         }

@@ -21,14 +21,21 @@ Package.onUse(function(api) {
     'kadira:flow-router-ssr@3.3.0',
     'kadira:react-layout@1.3.1',
 
-    'reactive-dict'
+    'reactive-dict',
+    'timbrandin:react-templates'
   ];
 
   api.use(packages);
 
   api.imply(packages);
 
-  api.addFiles('body.jsx');
+  // Templates.
+  api.addFiles('templates/page.html.jsx');
+
+  // Components
+  api.addFiles('components/page.jsx');
+
+  // Routing logic.
   api.addFiles('menu.jsx');
 
   // Help keep track of page scroll during history navigation.

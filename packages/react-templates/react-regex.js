@@ -7,7 +7,7 @@ ReactRegex = [
   // {{#each}} in
   {
     regex: /{{#each\s+([^\s]+)\s+in\s+([^}]+)\s*}}/g,
-    replace: "{(ReactTemplate.check(context, '$2') ? context.$2 : []).map(function($1, index){let context=__component.data;context.$1=$1"
+    replace: "{(ReactTemplate.check(context, '$2') ? context.$2 : []).map(function($1, index){let context=__component;context.$1=$1"
   },
   // {{/each}}
   {
@@ -77,10 +77,10 @@ ReactRegex = [
     replace: "):''}"
   },
 
-  // {{helper}} raw HTML
+  // {{{helper}}} raw HTML
   {
     regex: /{{{([^}]*)}}}/g,
-    replace: "{ReactTemplate.check(context, '$1') ? context.data.$1 : ''}"
+    replace: "{ReactTemplate.check(context, '$1') ? context.$1 : ''}"
   },
   // {{helper}} SafeString – Dynamic Attribute (class)
   {
