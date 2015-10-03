@@ -12,7 +12,7 @@ class Entity {
    *  * schame: A SimpleSchema on the Collection.
    *  * subs: An object literal on the Collection.
    */
-  constructor({ name, schema }) {
+  constructor({ name, schema = {} }) {
 
     // Assign arguments as class properties
     let [ args, dummy ] = [...arguments];
@@ -75,12 +75,10 @@ if (Meteor.isServer) {
      * @param  {Object} sharedOptions Same options as thus for BaseCollection.
      * @param  {Object} serverOptions Specific options for the defaults and the indexes.
      */
-    constructor({ name, schema, indexes }) {
+    constructor({ name, schema = {}, indexes = {} }) {
       super(arguments[0]);
-      if (indexes) {
-        _.each(indexes, (index) => {
-          this._createIndexes(indexes);
-        });
+      if (!_.isEmpty(indexes)) {
+        this._createIndexes(indexes);
       }
     }
     _createIndexes(index) {

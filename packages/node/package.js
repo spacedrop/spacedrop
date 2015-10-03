@@ -15,10 +15,12 @@ Package.onUse(function(api) {
 
   api.use([
     'spacedrop:core@0.0.1',
-    'spacedrop:entity@0.0.1'
+    'spacedrop:entity@0.0.1',
+    'spacedrop:permission@0.0.1'
   ]);
 
   api.addFiles('node.js');
+  api.addFiles('permissions.js');
 });
 
 Package.onTest(function(api) {

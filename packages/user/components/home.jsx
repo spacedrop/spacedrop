@@ -1,4 +1,4 @@
-SD.Views.Client.UserHome = class extends SD.Component {
+SD.Views.UserHome = class extends SD.Component {
   constructor(props) {
     super(props);
   }

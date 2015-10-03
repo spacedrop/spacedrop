@@ -13,8 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
-  // Base Packages.
-  const packages = [
+  const shared = [
     'meteor-base',
     'mongo',
     'jquery',
@@ -24,10 +23,8 @@ Package.onUse(function(api) {
     'ecmascript',
     'react'
   ];
-
-  api.use(packages);
-
-  api.imply(packages);
+  api.use(shared);
+  api.imply(shared);
 
   api.addFiles('namespaces.js');
   api.addFiles('component.js');

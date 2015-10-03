@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'spacedrop:permissions',
+  name: 'spacedrop:permission',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -13,7 +13,16 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
-  api.use(['spacedrop:core@0.0.1']);
+  const shared = [
+    'check'
+  ];
+  api.use(shared);
+  api.imply(shared);
+
+  api.use([
+    'spacedrop:core@0.0.1',
+    'spacedrop:entity@0.0.1'
+  ]);
 
   api.addFiles('permissions.js');
 });
@@ -21,6 +30,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('permissions');
+  api.use('spacedrop:permission');
   api.addFiles('permissions-tests.js');
 });

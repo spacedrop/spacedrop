@@ -11,7 +11,7 @@ spacedrop:core
 ############ SpaceDrop Packages (Optional) ############
 
 spacedrop:user
-spacedrop:permissions
+spacedrop:permission
 spacedrop:menu
 spacedrop:system
 spacedrop:entity
