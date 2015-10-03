@@ -36,7 +36,7 @@ Package.onUse(function(api) {
   api.addFiles('components/page.jsx');
 
   // Routing logic.
-  api.addFiles('menu.jsx');
+  api.addFiles('menu.js');
 
   // Help keep track of page scroll during history navigation.
   api.addFiles('scroll-tracking.js', 'client');
