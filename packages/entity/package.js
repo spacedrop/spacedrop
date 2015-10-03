@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
   const shared = [
+    'minimongo@1.0.0',
     'aldeed:collection2@2.5.0',
     'dburles:collection-helpers@1.0.3'
   ];

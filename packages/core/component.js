@@ -6,10 +6,14 @@ SD.Component = class extends React.Component {
   }
   componentWillUnmount() {
     _.each(this.comp, (comp) => {
-      comp.stop();
+      if (stop in comp) {
+        comp.stop();
+      }
     });
-    _.each(this.subs, (subs) => {
-      subs.stop();
+    _.each(this.subs, (sub) => {
+      if (stop in sub) {
+        sub.stop();
+      }
     });
   }
 }

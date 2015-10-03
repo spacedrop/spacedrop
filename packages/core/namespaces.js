@@ -11,7 +11,7 @@ SD = {
   Structure: {},
   /** Menu: Routing, Sitemaps, Human.txt, Robots.txt, ... */
   Menu: {},
-  /** Permisions: Roles, Accounts, Publication rules, ... */
+  /** Permisions: Roles, Permissions, Publication rules, ... */
   Permission: {},
   /** Utils: Logger, ES6+ decorators, ... */
   Utils: {}

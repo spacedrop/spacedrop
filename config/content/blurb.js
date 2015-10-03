@@ -3,10 +3,10 @@
  * Content type definition.
  */
 
-Page = new SD.Structure.Node({
-  name: 'page',
+Blurb = new SD.Structure.Node({
+  name: 'blurbs',
   schema: {
-    body: {
+    link: {
       type: String
     }
   }

@@ -19,11 +19,11 @@ SD.Views.User = class extends SD.Component {
         user = Meteor.users.findOne({uid: parseInt(uid)});
       }
       else {
-        this.subs.user.stop();
+        this.subs.user && this.subs.user.stop();
       }
       this.setState({
         user: user,
-        ready: this.subs.user ? this.subs.user.ready() : true
+        ready: this.subs.user && this.subs.user ? this.subs.user.ready() : true
       });
     });
   }

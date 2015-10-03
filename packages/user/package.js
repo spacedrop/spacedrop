@@ -42,7 +42,7 @@ Package.onUse(function(api) {
   api.addFiles('components/user.jsx');
 
   // Routing
-  api.addFiles('routes.jsx');
+  api.addFiles('routes.js');
 
   // Configuration
   api.addFiles('accounts-config.js', 'client');

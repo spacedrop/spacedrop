@@ -16,11 +16,24 @@ Package.onUse(function(api) {
   api.use([
     'spacedrop:core@0.0.1',
     'spacedrop:entity@0.0.1',
-    'spacedrop:permission@0.0.1'
+    'spacedrop:permission@0.0.1',
+    'spacedrop:menu@0.0.1'
   ]);
+
+  // Templates.
+  api.addFiles('templates/node.html.jsx');
+
+  // Components
+  api.addFiles('components/node.jsx');
+
+  // Routing
+  api.addFiles('routes.js');
 
   api.addFiles('node.js');
   api.addFiles('permissions.js');
+
+  // Publications.
+  api.addFiles('server/publications/node.js', 'server');
 });
 
 Package.onTest(function(api) {

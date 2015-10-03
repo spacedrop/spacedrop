@@ -13,21 +13,47 @@ class Entity {
    *  * subs: An object literal on the Collection.
    */
   constructor({ name, schema = {} }) {
-
     // Assign arguments as class properties
     let [ args, dummy ] = [...arguments];
     for (let prop of Object.keys(args)) {
       this[prop] = args[prop];
     }
+
     // Create a Meteor collection
-    this.collection = new Meteor.Collection(this.name);
-    // Create Schema and attach it to the collection
-    this.schema = new SimpleSchema(schema);
-    this.collection.attachSchema(this.schema);
+    var entity = SD.Structure[this.constructor.name];
+    if (!entity.collection) {
+      entity.collection = new Meteor.Collection(this.name);
+    }
+    this.collection = entity.collection;
+
+    // Attach the schema to the collection.
+    this.attachSchema(schema);
+
+    // Add reference to bundle in entity.
+    entity._bundle(this);
+  }
+
+  attachSchema(ss, options = {}) {
+    if (!(ss instanceof SimpleSchema)) {
+      ss = new SimpleSchema(ss);
+    }
+
+    this.collection._c2 = this.collection._c2 || {};
+
+    // If we've already attached one schema, we combine both into a new schema unless options.replace is `true`
+    if (this.schema && options.replace !== true) {
+      this.schema = new SimpleSchema([this.schema, ss]);
+    }
   }
 
   /**
-   * Exposes collection find().
+   * Exposes collection find() on entity.
+   */
+  static find() {
+    return this.collection.find.apply(this.collection, arguments);
+  }
+  /**
+   * Exposes collection find() on bundle.
    */
   find() {
     return this.collection.find.apply(this.collection, arguments);
@@ -36,29 +62,55 @@ class Entity {
   /**
    * Exposes collection findOne().
    */
+  static findOne() {
+    return this.collection.findOne.apply(this.collection, arguments);
+  }
+  /**
+   * Exposes collection findOne() on bundle.
+   */
   findOne() {
     return this.collection.findOne.apply(this.collection, arguments);
   }
 
   /**
-   * Exposes collection insert().
+   * Exposes collection insert() on bundle.
    */
   insert() {
+    // Prepare collection with bundle schema.
+    this.collection.simpleSchema = () => {
+      return this.schema;
+    };
     return this.collection.insert.apply(this.collection, arguments);
   }
 
   /**
-   * Exposes collection update().
+   * Exposes collection update() on bundle.
    */
   update() {
+    // Prepare collection with bundle schema.
+    this.collection.simpleSchema = () => {
+      return this.schema;
+    };
     return this.collection.update.apply(this.collection, arguments);
   }
 
   /**
-   * Exposes collection upsert().
+   * Exposes collection upsert() on bundle.
    */
   upsert() {
+    // Prepare collection with bundle schema.
+    this.collection.simpleSchema = () => {
+      return this.schema;
+    };
     return this.collection.upsert.apply(this.collection, arguments);
+  }
+
+  /**
+   * Called by constructor to add bundle instances to entity.
+   * @param  {[Entity]} bundle
+   */
+  static _bundle(bundle) {
+    this.bundles = _.union(this.bundles || [], [bundle]);
   }
 }
 // Export class.
