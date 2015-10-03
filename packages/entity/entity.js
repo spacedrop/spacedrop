@@ -3,7 +3,7 @@
 
 /**
  * Entities are instantiated sets of collections with the capability to store
- * documents tagged by a bundle name.
+ * documents tagged by bundle name.
  */
 class Entity {
   /**
