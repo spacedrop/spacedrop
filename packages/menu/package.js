@@ -35,7 +35,8 @@ Package.onUse(function(api) {
   // Components
   api.addFiles('components/page.jsx');
 
-  // Routing logic.
+  // Routing logic and subscription management.
+  api.addFiles('subscription-cache.js');
   api.addFiles('menu.js');
 
   // Help keep track of page scroll during history navigation.
