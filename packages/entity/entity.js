@@ -53,6 +53,7 @@ class Entity {
   static find() {
     return this.collection.find.apply(this.collection, arguments);
   }
+
   /**
    * Exposes collection find() on bundle.
    */
@@ -63,13 +64,14 @@ class Entity {
   }
 
   /**
-   * Exposes collection findOne().
+   * Exposes collection findOne() on entity.
    */
   static findOne() {
     var args = arguments;
     args[0] = _.extend(args[0] || {}, {bundle: this.bundle});
     return this.collection.findOne.apply(this.collection, args);
   }
+
   /**
    * Exposes collection findOne() on bundle.
    */
