@@ -1,4 +1,4 @@
-System.Front = class Front extends React.Component {
+SD.Views.Client.Front = class extends React.Component {
   constructor(props) {
     super(props);
   }

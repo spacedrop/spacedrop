@@ -1,11 +1,11 @@
 SD.Menu.route({
   path: '/user',
-  page_component: User.Home
+  page_component: SD.Views.Client.UserHome
 });
 
 SD.Menu.route({
   path: '/user/:uid',
-  page_component: User.User,
+  page_component: SD.Views.Client.User,
   subscriptions: {
     'user.user': ['uid']
   }

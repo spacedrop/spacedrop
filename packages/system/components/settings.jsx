@@ -1,10 +1,8 @@
-System.Settings = class Settings extends React.Component {
+SD.Views.Admin.Settings = class extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    return (
-      <div>Administrative settings.</div>
-    );
+    return ReactTemplate.Settings(this.state);
   }
 };

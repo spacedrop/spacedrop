@@ -13,17 +13,29 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
+  // External dependencies.
+  var packages = [
+    'timbrandin:react-templates'
+  ];
+
+  api.use(packages);
+  api.imply(packages);
+
   api.use([
     'spacedrop:core',
     'spacedrop:menu'
   ]);
 
-  api.addFiles('system.js');
+  // Templates.
+  api.addFiles('templates/front.html.jsx');
+  api.addFiles('templates/settings.html.jsx');
+
+  // Components
   api.addFiles('components/front.jsx');
   api.addFiles('components/settings.jsx');
-  api.addFiles('routes.jsx');
 
-  api.export('System');
+  // Routing
+  api.addFiles('routes.jsx');
 });
 
 Package.onTest(function(api) {

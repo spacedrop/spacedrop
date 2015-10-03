@@ -38,9 +38,10 @@ Package.onUse(function(api) {
   api.addFiles('templates/home.html.jsx');
 
   // Components
-  api.addFiles('user.js');
   api.addFiles('components/home.jsx');
   api.addFiles('components/user.jsx');
+
+  // Routing
   api.addFiles('routes.jsx');
 
   // Configuration
@@ -51,9 +52,6 @@ Package.onUse(function(api) {
 
   // Observers.
   api.addFiles('server/observers/user.js', 'server');
-
-  // Exports.
-  api.export('User');
 });
 
 Package.onTest(function(api) {
