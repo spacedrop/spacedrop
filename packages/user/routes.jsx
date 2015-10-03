@@ -1,9 +1,9 @@
-Menu.route({
+SD.Menu.route({
   path: '/user',
   page_component: User.Home
 });
 
-Menu.route({
+SD.Menu.route({
   path: '/user/:uid',
   page_component: User.User,
   subscriptions: {

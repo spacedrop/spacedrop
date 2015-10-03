@@ -1,4 +1,4 @@
-Menu = class Menu {
+SD.Menu = class Menu {
   static current() {
     return FlowRouter.current();
   }

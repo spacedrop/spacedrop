@@ -15,7 +15,7 @@ Package.onUse(function(api) {
 
   api.use(['spacedrop:core@0.0.1']);
 
-  var packages = [
+  const packages = [
     'gadicohen:sitemaps',
     'gadicohen:robots-txt',
     'kadira:dochead@1.2.2',

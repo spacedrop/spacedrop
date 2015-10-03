@@ -14,7 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
   // Base Packages.
-  var packages = [
+  const packages = [
     'meteor-base',
     'mongo',
     'jquery',
@@ -22,7 +22,9 @@ Package.onUse(function(api) {
     'standard-minifiers',
     'es5-shim',
     'ecmascript',
-    'react'
+    'react',
+
+    'spacedrop:namespaces'
   ];
 
   api.use(packages);

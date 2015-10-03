@@ -15,7 +15,7 @@ Package.onUse(function(api) {
 
   api.use(['spacedrop:core@0.0.1']);
 
-  var packages = [
+  const packages = [
     'meteorhacks:fast-render@2.10.0',
     'meteorhacks:subs-manager',
     'kadira:flow-router-ssr@3.3.0',
@@ -33,8 +33,6 @@ Package.onUse(function(api) {
 
   // Help keep track of page scroll during history navigation.
   api.addFiles('scroll-tracking.js', 'client');
-
-  api.export('Menu');
 });
 
 Package.onTest(function(api) {

@@ -1,9 +1,9 @@
-Menu.route({
+SD.Menu.route({
   path: '/admin/settings',
   page_component: System.Settings
 });
 
-Menu.route({
+SD.Menu.route({
   path: '/',
   page_component: System.Front
 });
