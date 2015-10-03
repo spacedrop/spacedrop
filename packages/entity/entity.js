@@ -2,7 +2,8 @@
 // * http://joshowens.me/how-to-optimize-your-mongo-database-for-meteor-js/
 
 /**
- * Base class for Collection. Takes car of default value and ensure indexes.
+ * Entities are instantiated sets of collections with the capability to store
+ * documents tagged by a bundle name.
  */
 class Entity {
   /**
