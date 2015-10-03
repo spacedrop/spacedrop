@@ -56,14 +56,18 @@ class Entity {
    * Exposes collection find() on bundle.
    */
   find() {
-    return this.collection.find.apply(this.collection, arguments);
+    var args = arguments;
+    args[0] = _.extend(args[0] || {}, {bundle: this.bundle});
+    return this.collection.find.apply(this.collection, args);
   }
 
   /**
    * Exposes collection findOne().
    */
   static findOne() {
-    return this.collection.findOne.apply(this.collection, arguments);
+    var args = arguments;
+    args[0] = _.extend(args[0] || {}, {bundle: this.bundle});
+    return this.collection.findOne.apply(this.collection, args);
   }
   /**
    * Exposes collection findOne() on bundle.
