@@ -3,23 +3,7 @@ let Permission = class {
     this._roles = [
       'administrator'
     ];
-    this._permissions = new SD.Structure.Entity({
-      name: 'permission',
-      schema: {
-        key: {
-          type: String,
-          regEx: /^[a-z\s]{3,40}$/,
-          unique: true
-        },
-        title: {
-          type: String
-        },
-        description: {
-          type: String,
-          optional: true
-        }
-      }
-    });
+    this._permissions = [];
   }
 
   set roles(roles) {
@@ -33,20 +17,23 @@ let Permission = class {
   }
 
   set permissions(permissions) {
-    if (_.isObject(permissions) && Meteor.isServer) {
+    if (_.isObject(permissions)) {
       _.each(permissions, (permission, key) => {
-        if (/^[a-z\s]{3,40}$/.test(key)) {
-          this._permissions.upsert({key: key}, {$set: _.extend({key: key}, permission)});
+        if (!/^[a-z\s]{3,40}$/.test(key)) {
+          console.error('Only 3-40 lowercase a-z and space characters are allowed as keys for permissions. You added: ', key);
+          delete permissions[key];
         }
-        else {
-          console.error('Only 3-40 lowercase a-z and space characters are allowed as keys for permissions. You added: ', name);
+        if (!permission.title) {
+          console.error('Missing title for permission: ', key);
+          delete permissions[key];
         }
       });
+      this._permissions = _.extend(this._permissions, permissions);
     }
   }
 
   get permissions() {
-    return this._permissions.find().fetch();
+    return this._permissions;
   }
 };
 
