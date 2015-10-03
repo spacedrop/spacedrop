@@ -7,7 +7,7 @@ SD.Menu = class Menu {
       subscriptions: function() {
         _.each(route.subscriptions, (options, subscription) => {
           if (typeof subscription == 'string') {
-            this.register(subscription, SD.Utils.SubsManager.subscribe.apply(this, _.union([subscription], _.map(options, (option) => {
+            this.register(subscription, SD.Utils.SubsManager.subscribe.apply(SD.Utils.SubManager, _.union([subscription], _.map(options, (option) => {
               if (typeof option == 'function') {
                 return option();
               }

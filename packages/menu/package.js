@@ -15,7 +15,7 @@ Package.onUse(function(api) {
 
   api.use(['spacedrop:core@0.0.1']);
 
-  const packages = [
+  const shared = [
     'meteorhacks:fast-render@2.10.0',
     'meteorhacks:subs-manager',
     'kadira:flow-router-ssr@3.3.0',
@@ -24,10 +24,8 @@ Package.onUse(function(api) {
     'reactive-dict',
     'timbrandin:react-templates'
   ];
-
-  api.use(packages);
-
-  api.imply(packages);
+  api.use(shared);
+  api.imply(shared);
 
   // Templates.
   api.addFiles('templates/page.html.jsx');

@@ -13,6 +13,13 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2');
 
+  const shared = [
+    'aldeed:collection2@2.5.0',
+    'dburles:collection-helpers@1.0.3'
+  ];
+  api.use(shared);
+  api.imply(shared);
+
   api.use(['spacedrop:core@0.0.1']);
 
   api.addFiles('entity.js');

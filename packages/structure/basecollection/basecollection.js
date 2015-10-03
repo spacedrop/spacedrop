@@ -35,7 +35,7 @@ class BaseCollection {
           let variables = [...arguments];
           this.logger.info('Subscribing to', subName, 'with', variables);
           let boundVars = [`${this.name}${subName}`].concat(variables);
-          return SD.Utils.globalSubs.subscribe.apply(SD.Utils.globalSubs, boundVars);
+          return SD.Utils.SubManager.subscribe.apply(SD.Utils.SubManager, boundVars);
         };
         Object.defineProperty(this, `sub${subName}`, { value: subscribeFct });
       })(key);
