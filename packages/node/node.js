@@ -22,6 +22,7 @@ let Node = class extends SD.Structure.Entity {
         }
       }, schema)
     });
+
     // Ensure index for entity type node.
     Node._ensureIndex('nid', {unique: 1});
 
