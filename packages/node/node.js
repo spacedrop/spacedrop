@@ -5,7 +5,6 @@ let Node = class extends SD.Structure.Entity {
       schema: _.extend({
         nid: {
           type: Number,
-          unique: true,
           optional: true,
           autoValue: () => {
             return this.collection.find().count() + 1;
@@ -23,6 +22,9 @@ let Node = class extends SD.Structure.Entity {
         }
       }, schema)
     });
+    // Ensure index for entity type node.
+    Node._ensureIndex('nid', {unique: 1});
+
     // Assign bundle to instance.
     this.bundle = name;
   }

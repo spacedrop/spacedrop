@@ -51,6 +51,10 @@ class Entity {
    * Exposes collection find() on entity.
    */
   static find() {
+    if (!this.collection) {
+      console.info(`The class ${this.name} does not have any collection.`);
+      return;
+    }
     return this.collection.find.apply(this.collection, arguments);
   }
 
@@ -67,6 +71,10 @@ class Entity {
    * Exposes collection findOne() on entity.
    */
   static findOne() {
+    if (!this.collection) {
+      console.info(`The class ${this.name} does not have any collection.`);
+      return;
+    }
     var args = arguments;
     args[0] = _.extend(args[0] || {}, {bundle: this.bundle});
     return this.collection.findOne.apply(this.collection, args);
@@ -113,6 +121,15 @@ class Entity {
   }
 
   /**
+   * Adds an index to the entity collection.
+   */
+  static _ensureIndex() {
+    if (Meteor.isServer) {
+      this.collection._ensureIndex.apply(this.collection, arguments);
+    }
+  }
+
+  /**
    * Called by constructor to add bundle instances to entity.
    * @param  {[Entity]} bundle
    */
@@ -122,28 +139,3 @@ class Entity {
 }
 // Export class.
 SD.Structure.Entity = Entity;
-
-// Server only
-if (Meteor.isServer) {
-  /**
-   * Server side base collection. Add defaults and indexes in Mongo.
-   */
-  class ServerEntity extends Entity {
-    /**
-     * C-tor.
-     * @param  {Object} sharedOptions Same options as thus for BaseCollection.
-     * @param  {Object} serverOptions Specific options for the defaults and the indexes.
-     */
-    constructor({ name, schema = {}, indexes = {} }) {
-      super(arguments[0]);
-      if (!_.isEmpty(indexes)) {
-        this._createIndexes(indexes);
-      }
-    }
-    _createIndexes(index) {
-      this.collection._ensureIndex(index);
-    }
-  }
-  // Export class.
-  SD.Structure.Entity = ServerEntity;
-}
