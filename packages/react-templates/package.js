@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.registerBuildPlugin({
-  name: 'timbrandin:react-templates',
+  name: 'react-templates',
   use: [
     'babel-compiler@5.8.24_1',
     'ecmascript@0.1.4',
