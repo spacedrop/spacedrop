@@ -22,20 +22,22 @@ Package.onUse(function(api) {
     'standard-minifiers',
     'es5-shim',
     'ecmascript',
-    'react',
-
-    'spacedrop:namespaces'
+    'react'
   ];
 
   api.use(packages);
 
   api.imply(packages);
 
-  api.addFiles('core.js');
-  api.addFiles('blaze-in-react.js');
+  api.addFiles('namespaces.js');
+  api.addFiles('component.js');
 
+  // Exported symbols outside the scope of this package
+  api.export(['SD']);
+
+  // Added Blaze support in React.
+  api.addFiles('blaze-in-react.js');
   api.export('BlazeInReact');
-  api.export('SpaceDrop');
 });
 
 Package.onTest(function(api) {
