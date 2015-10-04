@@ -1,4 +1,4 @@
-SD.Views.Client.Front = class extends React.Component {
+SD.Views.Front = class extends React.Component {
   constructor(props) {
     super(props);
   }

@@ -1,4 +1,4 @@
-SD.Views.Client.Page = class extends React.Component {
+SD.Views.Page = class extends React.Component {
   constructor(props) {
     super(props);
   }

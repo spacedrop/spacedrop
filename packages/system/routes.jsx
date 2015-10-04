@@ -5,5 +5,5 @@ SD.Menu.route({
 
 SD.Menu.route({
   path: '/',
-  page_component: SD.Views.Client.Front
+  page_component: SD.Views.Front
 });
