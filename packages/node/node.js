@@ -1,7 +1,8 @@
 let Node = class extends SD.Structure.Entity {
   constructor({ name, schema = {}, indexes = {} }) {
     super({
-      name: 'node',
+      type: 'node',
+      name: name,
       schema: _.extend({
         nid: {
           type: Number,
@@ -28,5 +29,5 @@ let Node = class extends SD.Structure.Entity {
   }
 }
 
-// Export Node.
+// Export Node to packages and application.
 SD.Structure.Node = Node;

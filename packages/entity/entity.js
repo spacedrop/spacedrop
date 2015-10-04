@@ -13,7 +13,7 @@ class Entity {
    *  * schame: A SimpleSchema on the Collection.
    *  * subs: An object literal on the Collection.
    */
-  constructor({ name, schema = {} }) {
+  constructor({ type, name, schema = {} }) {
     // Assign arguments as class properties
     let [ args, dummy ] = [...arguments];
     for (let prop of Object.keys(args)) {
@@ -23,15 +23,18 @@ class Entity {
     // Create a Meteor collection
     var entity = SD.Structure[this.constructor.name];
     if (!entity.collection) {
-      entity.collection = new Meteor.Collection(this.name);
+      entity.collection = new Meteor.Collection(this.type);
     }
     this.collection = entity.collection;
 
     // Attach the schema to the collection.
     this.attachSchema(schema);
 
+    // Add reference to entity type in Entity.
+    Entity._type(type, entity);
+
     // Add reference to bundle in entity.
-    entity._bundle(this);
+    entity._bundle(name, this);
   }
 
   attachSchema(ss, options = {}) {
@@ -130,11 +133,25 @@ class Entity {
   }
 
   /**
-   * Called by constructor to add bundle instances to entity.
+   * Called by the constructor to add bundle instances to entity.
    * @param  {[Entity]} bundle
    */
-  static _bundle(bundle) {
-    this.bundles = _.union(this.bundles || [], [bundle]);
+  static _bundle(name, bundle) {
+    if (!this.bundles) {
+      this.bundles = {};
+    }
+    this.bundles[name] = bundle;
+  }
+
+  /**
+   * Called by the constructor to add entity instances to Entity.
+   * @param  {[Entity]} entity
+   */
+  static _type(name, entity) {
+    if (!this.types) {
+      this.types = {};
+    }
+    this.types[name] = entity;
   }
 }
 // Export class.
