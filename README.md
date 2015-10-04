@@ -101,7 +101,7 @@ let Page = new SD.Structure.Node({
 });
 ```
 
-#### List all nodes of content type "page".
+#### List all pages (nodes of content type "page").
 
 ```
 let nodes = Page.find();
