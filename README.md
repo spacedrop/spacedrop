@@ -1,5 +1,5 @@
 # SpaceDrop
-An open-source CMS, built with Meteor in React and inspired by Drupal.
+An open-source CMS in JavaScript, built with Meteor and React.
 
 ## Achivement unlocked, you found us.
 
