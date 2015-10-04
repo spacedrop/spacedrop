@@ -12,7 +12,7 @@ Become a co-author and member of the die-hards controlling SpaceDrop's future di
 
 ### Menu API
 
-Create route to view content of type node.
+#### Create route to view content of type node.
 
 ```
 SD.Menu.route({
@@ -26,7 +26,7 @@ SD.Menu.route({
 
 ### Permission API
 
-Create permission to access published content.
+#### Create permission to access published content.
 
 ```
 SD.Permission.permission({
@@ -35,7 +35,7 @@ SD.Permission.permission({
 });
 ```
 
-Create a role with limited permissions.
+#### Create a role with limited permissions.
 
 ```
 SD.Permission.role({
@@ -48,7 +48,7 @@ SD.Permission.role({
 
 ### Entity API
 
-Create an entity of type "node".
+#### Create an entity of type "node".
 
 ```
 let Node = class extends SD.Structure.Entity {
@@ -87,7 +87,7 @@ let Node = class extends SD.Structure.Entity {
 
 ### Node API
 
-Create a content type (bundle) with the name "page".
+#### Create a content type (bundle) with the name "page".
 
 ```
 let Page = new SD.Structure.Node({
@@ -98,11 +98,21 @@ let Page = new SD.Structure.Node({
     }
   }
 });
-
 ```
 
-> You can help improve these, get a PR committed and become a member of the
-> die-hards and start the discussion.
+#### List all nodes of content type "page".
+
+```
+let nodes = Page.find();
+```
+
+#### List all nodes regardless of content type (bundle).
+
+```
+let nodes = SD.Structure.Node.find();
+```
+
+> Help improve these APIs! Fork and create a pull request, when it gets committed you'll be added as member of the die-hards and help decide the future for this project.
 
 ## Sub-projects
 
