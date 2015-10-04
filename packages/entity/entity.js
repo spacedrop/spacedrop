@@ -13,7 +13,7 @@ class Entity {
    *  * schame: A SimpleSchema on the Collection.
    *  * subs: An object literal on the Collection.
    */
-  constructor({ type, name, schema = {} }) {
+  constructor({ type, bundle, schema = {} }) {
     // Assign arguments as class properties
     let [ args, dummy ] = [...arguments];
     for (let prop of Object.keys(args)) {
@@ -34,7 +34,7 @@ class Entity {
     Entity._type(type, entity);
 
     // Add reference to bundle in entity.
-    entity._bundle(name, this);
+    entity._bundle(bundle, this);
   }
 
   attachSchema(ss, options = {}) {

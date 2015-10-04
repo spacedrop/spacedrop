@@ -2,7 +2,7 @@ let Node = class extends SD.Structure.Entity {
   constructor({ name, schema = {}, indexes = {} }) {
     super({
       type: 'node',
-      name: name,
+      bundle: name,
       schema: _.extend({
         nid: {
           type: Number,
