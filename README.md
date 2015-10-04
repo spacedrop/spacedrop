@@ -20,8 +20,7 @@ SD.Menu.route({
   component: SD.Views.Node,
   subscriptions: {
     'node.node': ['nid']
-  },
-  'access arguments': ['access content']
+  }
 })
 ```
 
