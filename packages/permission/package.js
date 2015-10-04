@@ -24,7 +24,7 @@ Package.onUse(function(api) {
     'spacedrop:entity@0.0.1'
   ]);
 
-  api.addFiles('permissions.js');
+  api.addFiles('permission.js');
 });
 
 Package.onTest(function(api) {
