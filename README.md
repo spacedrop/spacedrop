@@ -78,9 +78,6 @@ let Node = class extends SD.Structure.Entity {
 
     // Ensure index for entity type node.
     Node._ensureIndex('nid', {unique: 1});
-
-    // Assign bundle to instance.
-    this.bundle = name;
   }
 }
 ```
