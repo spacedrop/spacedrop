@@ -80,6 +80,9 @@ let Node = class extends SD.Structure.Entity {
     Node._ensureIndex('nid', {unique: 1});
   }
 }
+
+// Export Node API to application and packages.
+SD.Structure.Node = Node;
 ```
 
 ### Node API
