@@ -1,10 +1,109 @@
 # SpaceDrop
 An open-source CMS, built with Meteor in React and inspired by Drupal.
 
-## You found us!!
+## Achivement unlocked, you found us.
 
-Great work! Hands to you for Googling and finding us, the next step is up to you.
-Become a co-author and member of the board steering SpaceDrop's directions in the future, by forking and creating a PR that gets committed.
+Hands to you for Googling and finding us, the next step is up to you.
+Become a co-author and member of the die-hards controlling SpaceDrop's future direction, by forking and creating a PR that gets committed.
+
+## API examples
+
+> Below APIs are functional, more APIs are coming soon!
+
+### Menu API
+
+Create route to view content of type node.
+
+```
+SD.Menu.route({
+  path: 'node/:nid',
+  component: SD.Views.Node,
+  subscriptions: {
+    'node.node': ['nid']
+  },
+  'access arguments': ['access content']
+})
+```
+
+### Permission API
+
+Create permission to access published content.
+
+```
+SD.Permission.permission({
+  name: 'access content',
+  title: 'View published content'
+});
+```
+
+Create a role with limited permissions.
+
+```
+SD.Permission.role({
+  name: 'guest',
+  permissions: {
+    'access content': 1
+  }
+});
+```
+
+### Entity API
+
+Create an entity of type "node".
+
+```
+let Node = class extends SD.Structure.Entity {
+  constructor({ name, schema = {}, indexes = {} }) {
+    super({
+      name: 'node',
+      schema: _.extend({
+        nid: {
+          type: Number,
+          optional: true,
+          autoValue: () => {
+            return this.collection.find().count() + 1;
+          }
+        },
+        bundle: {
+          type: String,
+          optional: true,
+          autoValue: function() {
+            return name;
+          }
+        },
+        title: {
+          type: String
+        }
+      }, schema)
+    });
+
+    // Ensure index for entity type node.
+    Node._ensureIndex('nid', {unique: 1});
+
+    // Assign bundle to instance.
+    this.bundle = name;
+  }
+}
+```
+
+### Node API
+
+Create a content type (bundle) with the name "page".
+
+```
+let Page = new SD.Structure.Node({
+  name: 'page',
+  schema: {
+    body: {
+      type: String
+    }
+  }
+});
+
+```
+
+> You can help improve these, get a PR committed and become a member of the
+> die-hards and start the discussion.
 
 ## Sub-projects
 

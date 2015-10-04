@@ -1,6 +1,6 @@
 SD.Menu.route({
   path: '/node/:nid',
-  page_component: SD.Views.Node,
+  component: SD.Views.Node,
   subscriptions: {
     'node.node': ['nid']
   },

@@ -8,6 +8,6 @@
   {{#if user}}
     <div>{{user.uid}}</div>
   {{else}}
-    <div>Not found</div>
+    <div>User not found</div>
   {{/if}}
 </template>

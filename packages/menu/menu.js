@@ -32,20 +32,20 @@ SD.Menu = class Menu {
             route.subscriptions.map((subscription) => {
               FlowRouter.subsReady(subscription, () => {
                 ReactLayout.render(SD.Views.Page, {
-                  content: React.createElement(route.page_component, arguments)
+                  content: React.createElement(route.component, arguments)
                 });
               });
             });
           }
           else {
             ReactLayout.render(SD.Views.Page, {
-              content: React.createElement(route.page_component, arguments)
+              content: React.createElement(route.component, arguments)
             });
           }
         }
         else {
           ReactLayout.render(SD.Views.Page, {
-            content: React.createElement(route.page_component, arguments)
+            content: React.createElement(route.component, arguments)
           });
         }
       }
