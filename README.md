@@ -1,7 +1,7 @@
 # SpaceDrop
 An open-source CMS in JavaScript, built with Meteor and React.
 
-## Achivement unlocked, you found us.
+## Achievement unlocked, you found us.
 
 Hands to you for Googling and finding us, the next step is up to you.
 Become a co-author and member of the die-hards controlling SpaceDrop's future direction, by forking and creating a PR that gets committed.
